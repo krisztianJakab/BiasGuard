@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiasGuard Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="summary-container">
+        <h2 class="summary-title">Summary</h2>
+        <div class="metric">
+            <span class="clickable-text" onclick="showDetails('bias')">Bias</span>
+            <div class="progress-container" data-percent="60"></div>
+        </div>
+        <div class="metric">
+            <span class="clickable-text" onclick="showDetails('accuracy')">Accuracy</span>
+            <div class="progress-container" data-percent="40"></div>
+        </div>
+        <div class="metric">
+            <span class="clickable-text" onclick="showDetails('conciseness')">Conciseness</span>
+            <div class="progress-container" data-percent="90"></div>
+        </div>
+        <div class="metric">
+            <span class="clickable-text" onclick="showDetails('relevance')">Relevance</span>
+            <div class="progress-container" data-percent="80"></div>
+        </div>
+        <div class="metric">
+            <span class="clickable-text" onclick="showDetails('clarity')">Clarity</span>
+            <div class="progress-container" data-percent="70"></div>
+        </div>
+    </div>
+
+    <div id="report-issue" class="report-issue" onclick="openReportWindow()">
+        <span>Report Issue</span>
+    </div>
+
+    <div id="report-window" class="report-window">
+        <div class="report-content">
+            <span class="close" onclick="closeReportWindow()">&times;</span>
+            <h3>Report an Issue</h3>
+            <label for="metric-select">Select Metric:</label>
+            <select id="metric-select">
+                <option value="bias">Bias</option>
+                <option value="accuracy">Accuracy</option>
+                <option value="conciseness">Conciseness</option>
+                <option value="relevance">Relevance</option>
+                <option value="clarity">Clarity</option>
+            </select>
+            <textarea id="report-text" placeholder="Describe the issue..."></textarea>
+            <button onclick="submitReport()">Submit Report</button>
+        </div>
+    </div>
+
+    <div id="details-window" class="details-window">
+        <div class="details-content">
+            <span class="close" onclick="closeDetails()">&times;</span>
+            <h3 id="details-title">Details</h3>
+            <p id="details-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
